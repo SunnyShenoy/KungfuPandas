@@ -1,0 +1,34 @@
+{
+    "id": "5de89340-2894-411b-b822-ea288a753d92",
+    "pipeline_type": "WORKSPACE",
+    "development": false,
+    "notifications": [
+        {
+            "email_recipients": [
+                "sunil.vshenoy@gmail.com"
+            ],
+            "alerts": [
+                "on-update-success",
+                "on-update-failure",
+                "on-update-fatal-failure",
+                "on-flow-failure"
+            ]
+        }
+    ],
+    "root_path": "/Workspace/KungfuPandas/Cancer_Screening_gold_DLT_Pipeline/Aggregation",
+    "continuous": false,
+    "channel": "CURRENT",
+    "photon": true,
+    "libraries": [
+        {
+            "glob": {
+                "include": "/Workspace/KungfuPandas/Cancer_Screening_gold_DLT_Pipeline/Aggregation/GOLD_DLT_Aggregation.sql"
+            }
+        }
+    ],
+    "name": "Cancer_Screening_gold_DLT_Pipeline",
+    "serverless": true,
+    "catalog": "medical_research_recalls",
+    "schema": "gold",
+    "data_sampling": false
+}
