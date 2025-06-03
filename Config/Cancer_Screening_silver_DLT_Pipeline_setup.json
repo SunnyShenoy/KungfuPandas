@@ -1,0 +1,44 @@
+{
+  "id": "851dd490-d034-431b-b87a-940810be29bb",
+  "pipeline_type": "WORKSPACE",
+  "name": "Cancer_Screening_Silver_DLT_Pipeline",
+  "configuration": {
+    "spark.hadoop.fs.s3a.role.arn": "arn:aws:iam::944777360712:role/kgf-db-role",
+    "spark.databricks.delta.preview.enabled": "true"
+  },
+  "libraries": [
+    {
+      "glob": {
+        "include": "/Workspace/KungfuPandas/Cancer_Screening_silver_DLT_Pipeline/Enrichment/Silver_DLT_Enrichment.sql"
+      }
+    }
+  ],
+  "schema": "silver",
+  "continuous": false,
+  "development": false,
+  "photon": true,
+  "edition": "ADVANCED",
+  "channel": "CURRENT",
+  "catalog": "medical_research_recalls",
+  "notifications": [
+    {
+      "email_recipients": [
+        "sunil.vshenoy@gmail.com"
+      ],
+      "alerts": [
+        "on-update-success",
+        "on-update-failure",
+        "on-update-fatal-failure",
+        "on-flow-failure"
+      ]
+    }
+  ],
+  "serverless": true,
+  "data_sampling": false,
+  "event_log": {
+    "name": "cscreening_event_log_851dd490-d034-431b-b87a-940810be29bb",
+    "schema": "default",
+    "catalog": "medical_research_recalls"
+  },
+  "root_path": "/Workspace/KungfuPandas/Cancer_Screening_silver_DLT_Pipeline/Enrichment"
+}
