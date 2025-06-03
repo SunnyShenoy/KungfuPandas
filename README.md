@@ -1,4 +1,6 @@
-🧬 Databricks Medallion Architecture – Cancer Risk Pipeline
+Cancer Risk Screening analytics and Recall Management - Databricks Medallion Architecture 
+================================================================================================
+
 📌 Overview
 The Cancer Screening Data pipeline has been built to generate cancer trends among subset of users, measure risks and send Recalls on time so that patients can discuss on ways to prevent the disease or help in early detection for much higher chances of cure. 
 
@@ -9,6 +11,11 @@ Inference: The recalls count dashboard gives the count of users that need urgent
 This project implements a Medallion Architecture using Databricks Delta Live Tables (DLT) to process healthcare datasets related to cancer risk detection and profiling. The architecture follows a modular structure with Bronze, Silver, and Gold layers to ensure scalable, traceable, and high-quality data transformations.
 
 License: MIT
+
+Architectural Diagram
+
+![Cancer_Screening_And_Recalls_Analytics_Architecture_Diagram](https://github.com/user-attachments/assets/eb39581f-6058-4d3b-8127-6133e8a69748)
+
 
 🗂️ Architecture Layers
 🟫 Bronze Layer – Raw Ingestion
@@ -68,9 +75,6 @@ suburb_patient_distribution
 1. 📦 Full Load vs. Incremental
 Use a control notebook with a job_type parameter (prime or delta) to switch between full load and incremental ingestion modes.
 
-python
-Copy
-Edit
 # Pass job_type via widgets
 dbutils.widgets.text("job_type", "delta")
 2. 🚀 Run Mode
@@ -99,6 +103,9 @@ Tools:
 Databricks SQL Dashboards
 
 Power BI / Tableau via JDBC
+
+Genie
+Genie has been a powerful integration tool to dynamically run analytics using NLP
 
 🔒 Data Governance
 Access is managed via Unity Catalog.
